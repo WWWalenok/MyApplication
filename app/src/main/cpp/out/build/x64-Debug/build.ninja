@@ -51,6 +51,22 @@ build CMakeFiles\Fa4-native-lib.dir\native-lib.cpp.obj: CXX_COMPILER__Fa4-native
   TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
   TARGET_PDB = Fa4-native-lib.pdb
 
+build CMakeFiles\Fa4-native-lib.dir\Source\FindA4.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\FindA4.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\Source\Vector.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\Vector.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target Fa4-native-lib
@@ -59,7 +75,7 @@ build CMakeFiles\Fa4-native-lib.dir\native-lib.cpp.obj: CXX_COMPILER__Fa4-native
 #############################################
 # Link the shared library Fa4-native-lib.dll
 
-build Fa4-native-lib.dll Fa4-native-lib.lib: CXX_SHARED_LIBRARY_LINKER__Fa4-native-lib_Debug CMakeFiles\Fa4-native-lib.dir\native-lib.cpp.obj
+build Fa4-native-lib.dll Fa4-native-lib.lib: CXX_SHARED_LIBRARY_LINKER__Fa4-native-lib_Debug CMakeFiles\Fa4-native-lib.dir\native-lib.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\FindA4.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\Vector.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -std=c++14 -pthread -g
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

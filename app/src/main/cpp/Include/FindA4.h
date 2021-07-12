@@ -9,14 +9,18 @@ extern "C++"
 {
 #include <string>
 #include "Vector.h"
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <thread>
+#include <cmath>
+#include <map>
+#include <utility>
 	namespace fa4
 	{
 		static std::string version = "1.0.13";
 
-		std::string GetVersion()
-		{
-			return std::string(version);
-		}
+		std::string GetVersion();
 
 		struct Prop
 		{
@@ -59,7 +63,7 @@ extern "C++"
 			maxY = ~480
 			 int32_t side = -1 : - use to define foot side : 1 for right, 0 for left, other - side not define
 		*/
-		std::string GetA4FromImg(int32_t maxthreadcount, uint8_t **img, int32_t maxX, int32_t maxY, int32_t imnum, int32_t side = -1);
+		std::string GetA4FromImg(int maxthreadcount, unsigned char **img, int maxX, int maxY, int imnum, int side = -1);
 
 		/*
 			props - Array of parametrs

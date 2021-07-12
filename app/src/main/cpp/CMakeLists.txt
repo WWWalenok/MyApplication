@@ -32,6 +32,8 @@ file(GLOB H
         *.h
         )
 
+MESSAGE(${CPP})
+
 add_library( # Sets the name of the library.
             Fa4-native-lib
 
@@ -39,8 +41,13 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-
-            ${CPP} ${H}
+        native-lib.cpp
+        Include/FindA4.h
+        Include/Vector.h
+        Include/Tabu.h
+        Source/FindA4.cpp
+        Source/Vector.cpp
+           # ${CPP} ${H}
 
         )
 

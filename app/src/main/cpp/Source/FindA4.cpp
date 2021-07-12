@@ -7,16 +7,14 @@
 #include "../Include/FindA4.h"
 #include "../Include/Vector.h"
 #include "../Include/Tabu.h"
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <thread>
-#include <cmath>
-#include <map>
-#include <utility>
 
 namespace fa4
 {
+	std::string GetVersion()
+	{
+		return std::string(version);
+	}
+
 	typedef int int32_t;
 #define PI 3.141592653589793238462643383279502884197169399
 #define LineDisp 15
@@ -1814,7 +1812,7 @@ namespace fa4
 		return Start(img);
 	}
 
-	string GetA4FromImg(int32_t maxthreadcount, uint8_t **img, int32_t inpmaxY, int32_t inpmaxX, int32_t KadrNumber, int32_t sd)
+	string GetA4FromImg(int maxthreadcount, unsigned char  **img, int inpmaxY, int inpmaxX, int KadrNumber, int sd)
 	{
 		Right = (sd == 0) ? 0 : ((sd == 1) ? 1 : -1);
 		double time = 0;
