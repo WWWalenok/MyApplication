@@ -9,8 +9,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val a = com.fittin.fa4Lib.Finder()
+
         // Example of a call to a native method
-        findViewById<TextView>(R.id.sample_text).text = com.fittin.fa4Lib.Finder.GetVersion()
+        findViewById<TextView>(R.id.sample_text).text = a.GetVersion()
     }
 
     /**

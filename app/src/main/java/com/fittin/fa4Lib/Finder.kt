@@ -3,7 +3,13 @@ package com.fittin.fa4Lib
 class Finder {
 
 
+    external fun GetVersion(): String
+
     companion object {
-        @JvmStatic external fun GetVersion(): String
+
+        // Used to load the 'native-lib' library on application startup.
+        init {
+            System.loadLibrary("Fa4-native-lib")
+        }
     }
 }
