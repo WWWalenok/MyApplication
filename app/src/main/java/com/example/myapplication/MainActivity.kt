@@ -1,23 +1,23 @@
-package com.example.myapplication
+package com.fittin.fa4Lib
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class Finder : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Example of a call to a native method
-        findViewById<TextView>(R.id.sample_text).text = GetFa4()
+        findViewById<TextView>(R.id.sample_text).text = GetVersion()
     }
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    external fun GetFa4(): String
+    external fun GetVersion(): String
 
     companion object {
         // Used to load the 'native-lib' library on application startup.

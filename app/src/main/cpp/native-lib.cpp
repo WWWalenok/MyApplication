@@ -3,7 +3,7 @@
 #include "Include/FindA4.h"
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_myapplication_MainActivity_GetFa4(
+Java_com_fittin_fa4Lib_Finder_GetVersion(
         JNIEnv* env,
 jobject /* this */) {
 
