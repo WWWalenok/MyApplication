@@ -3,7 +3,7 @@
 
 # Sets the minimum version of CMake required to build the native library.
 
-project("Fa4Test")
+project("Fa4Lib")
 
 cmake_minimum_required(VERSION 3.10.2)
 
@@ -26,13 +26,11 @@ message(STATUS "!!!! CMAKE_CXX_FLAGS_RELEASE: ${CMAKE_CXX_FLAGS_RELEASE}")
 # Gradle automatically packages shared libraries with your APK.
 
 file(GLOB CPP
-        *.cpp
+        Source/*.cpp
         )
 file(GLOB H
-        *.h
+        Include/*.hpp
         )
-
-MESSAGE(${CPP})
 
 add_library( # Sets the name of the library.
             Fa4-native-lib
@@ -41,13 +39,28 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-        native-lib.cpp
-        Include/FindA4.h
-        Include/Vector.h
-        Include/Tabu.h
-        Source/FindA4.cpp
+
         Source/Vector.cpp
-           # ${CPP} ${H}
+        Source/FindA4.cpp
+        Source/GetA4.cpp
+        Source/GetCamPos.cpp
+        Source/GetKrit.cpp
+        Source/Init.cpp
+        Source/UpdateOreint.cpp
+        Source/Tabu.cpp
+        Source/MakeBest.cpp
+        Nativelib_CPP.cpp
+        Nativelib_PAS.cpp
+        Include/FindA4.hpp
+        Include/Vector.hpp
+        Include/Tabu.hpp
+
+        native-lib.cpp
+        Include/Vector.h
+        Include/FindA4.h
+        Include/Tabu.h
+        Source/FindA4O.cpp
+        Source/VectorO.cpp
 
         )
 

@@ -14,3 +14,4 @@
 .cxx
 local.properties
 /.vs
+/app/src/main/cpp/.vs

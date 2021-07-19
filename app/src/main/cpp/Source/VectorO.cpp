@@ -1,63 +1,7 @@
-#include "../Include/Vector.hpp"
+#include "../Include/Vector.h"
 #include <cmath>
 
 using namespace std;
-
-#define Normalize3_M(Vector)\
-{ \
-	float r = Vector[0] * Vector[0] + Vector[1] * Vector[1] + Vector[2] * Vector[2];\
-	union {float f; uint32_t i; } conv = { r };\
-	conv.i = 0x5f3759df - (conv.i >> 1);\
-	conv.f *= 1.5F - r * 0.5F * conv.f * conv.f;\
-	Vector[0] *= conv.f;\
-	Vector[1] *= conv.f;\
-	Vector[2] *= conv.f;\
-} \
-
-#define Normalize3(Vector)\
-{ \
-	float r = Vector.x * Vector.x + Vector.y * Vector.y + Vector.z * Vector.z;\
-	union {float f; uint32_t i; } conv = { r };\
-	conv.i = 0x5f3759df - (conv.i >> 1);\
-	conv.f *= 1.5F - r * 0.5F * conv.f * conv.f;\
-	Vector.x *= conv.f;\
-	Vector.y *= conv.f;\
-	Vector.z *= conv.f;\
-} \
-
-#define Normalize2_M(Vector)\
-{ \
-	float r = Vector[0] * Vector[0] + Vector[1] * Vector[1];\
-	union {float f; uint32_t i; } conv = { r };\
-	conv.i = 0x5f3759df - (conv.i >> 1);\
-	conv.f *= 1.5F - r * 0.5F * conv.f * conv.f;\
-	Vector[0] *= conv.f;\
-	Vector[1] *= conv.f;\
-} \
-
-
-#define Normalize2(Vector)\
-{ \
-	float r = Vector.x * Vector.x + Vector.y * Vector.y;\
-	union {float f; uint32_t i; } conv = { r };\
-	conv.i = 0x5f3759df - (conv.i >> 1);\
-	conv.f *= 1.5F - r * 0.5F * conv.f * conv.f;\
-	Vector.x *= conv.f;\
-	Vector.y *= conv.f;\
-} \
-
-float Q_rsqrt(float number)
-{
-	const float x2 = number * 0.5F;
-	const float threehalfs = 1.5F;
-	union {
-		float f;
-		uint32_t i;
-	} conv = { number }; // member 'f' set to value of 'number'.
-	conv.i = 0x5f3759df - (conv.i >> 1);
-	conv.f *= threehalfs - x2 * conv.f * conv.f;
-	return conv.f;
-}
 
 Vector3::Vector3()
 {
@@ -91,7 +35,7 @@ Vector3::Vector3(double* val)
 
 Vector3 Vector3::operator +(const Vector3& a) { return Vector3(a.x + x, a.y + y, a.z + z); }
 
-Vector3 Vector3::operator -(const Vector3& a) { return Vector3(x - a.x, y - a.y, z - a.z); }
+Vector3 Vector3::operator -(const Vector3& a) { return Vector3(a.x - x, a.y - y, a.z - z); }
 
 Vector3 Vector3::operator *(double a) { return Vector3(x * a, y * a, z * a); }
 
@@ -103,12 +47,12 @@ Vector3 Vector3::operator /(double a) { return Vector3(x / a, y / a, z / a); }
 
 double Vector3::GetLenght()
 {
-	return 1 / Q_rsqrt(x * x + y * y + z * z);
+	return sqrt(x * x + y * y + z * z);
 }
 
 void Vector3::SetLenght(double d)
 {
-	d = d * Q_rsqrt(x * x + y * y + z * z);
+	d = d / GetLenght();
 	x *= d;
 	y *= d;
 	z *= d;
@@ -143,12 +87,14 @@ Vector2 Vector2::operator !() { return Vector2(y, -x); }
 
 double Vector2::GetLenght()
 {
-	return 1 / Q_rsqrt(x * x + y * y);
+
+	return sqrt(x * x + y * y);
+
 }
 
 void Vector2::SetLenght(double d)
 {
-	d = d * Q_rsqrt(x * x + y * y);
+	d = d / GetLenght();
 	x *= d;
 	y *= d;
 }
@@ -157,8 +103,6 @@ Quaternion::Quaternion()
 {
 	x = 0;
 	y = 0;
-	z = 0;
-	w = 0;
 }
 
 Quaternion::Quaternion(double _x, double _y, double _z, double _w)

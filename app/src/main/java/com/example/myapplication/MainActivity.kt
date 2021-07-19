@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val a = com.fittin.fa4Lib.Finder()
+        val a = ru.fittin.scanleg.utils.pas.Finder()
 
         // Example of a call to a native method
         findViewById<TextView>(R.id.sample_text).text = a.GetVersion()
