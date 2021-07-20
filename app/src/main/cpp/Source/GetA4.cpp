@@ -1,7 +1,7 @@
 //
-//	Version 1.1.4_A
+//	Version 1.1.6_A
 //
-//	Date 14.07
+//	Date 19.07
 //
 
 #include "../Include/FindA4.hpp"
@@ -57,7 +57,6 @@ namespace fa4
 	void Finder::th_BruteScan(int32_t itercount, int32_t sublenght, float* outstats,float* lstat, double & Kritbb, int32_t & SheetFound, int32_t & SheetFoundProbability, int32_t & SheetProbablyFound, int32_t thnum)
 	{
 #pragma region Vars
-		//srand(Get(immaxY / 13][immaxX / 11] + thnum + 1);
 		double G11i = -550, G12i = 550;
 		double G21i = -550, G22i = 550;
 		double G31i = 350, G32i = 700;

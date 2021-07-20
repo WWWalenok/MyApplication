@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Fa4Test
+# Project: Fa4Lib
 # Configurations: Debug
 # =============================================================================
 
@@ -43,11 +43,11 @@ include CMakeFiles\rules.ninja
 
 build cmake_object_order_depends_target_Fa4-native-lib: phony || CMakeFiles\Fa4-native-lib.dir
 
-build CMakeFiles\Fa4-native-lib.dir\native-lib.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\native-lib.cpp || cmake_object_order_depends_target_Fa4-native-lib
+build CMakeFiles\Fa4-native-lib.dir\Source\Vector.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\Vector.cpp || cmake_object_order_depends_target_Fa4-native-lib
   DEFINES = -DFa4_native_lib_EXPORTS
   FLAGS = -Wall -Wextra -std=c++14 -pthread -g
   OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
-  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
   TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
   TARGET_PDB = Fa4-native-lib.pdb
 
@@ -59,11 +59,67 @@ build CMakeFiles\Fa4-native-lib.dir\Source\FindA4.cpp.obj: CXX_COMPILER__Fa4-nat
   TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
   TARGET_PDB = Fa4-native-lib.pdb
 
-build CMakeFiles\Fa4-native-lib.dir\Source\Vector.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\Vector.cpp || cmake_object_order_depends_target_Fa4-native-lib
+build CMakeFiles\Fa4-native-lib.dir\Source\GetA4.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\GetA4.cpp || cmake_object_order_depends_target_Fa4-native-lib
   DEFINES = -DFa4_native_lib_EXPORTS
   FLAGS = -Wall -Wextra -std=c++14 -pthread -g
   OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
   OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\Source\GetCamPos.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\GetCamPos.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\Source\GetKrit.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\GetKrit.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\Source\Init.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\Init.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\Source\UpdateOreint.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\UpdateOreint.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\Source\Tabu.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\Tabu.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\Source\MakeBest.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\Source\MakeBest.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
+  TARGET_PDB = Fa4-native-lib.pdb
+
+build CMakeFiles\Fa4-native-lib.dir\NativeLib.cpp.obj: CXX_COMPILER__Fa4-native-lib_Debug ..\..\..\NativeLib.cpp || cmake_object_order_depends_target_Fa4-native-lib
+  DEFINES = -DFa4_native_lib_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib.dir
   TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib.dir\
   TARGET_PDB = Fa4-native-lib.pdb
 
@@ -75,7 +131,7 @@ build CMakeFiles\Fa4-native-lib.dir\Source\Vector.cpp.obj: CXX_COMPILER__Fa4-nat
 #############################################
 # Link the shared library Fa4-native-lib.dll
 
-build Fa4-native-lib.dll Fa4-native-lib.lib: CXX_SHARED_LIBRARY_LINKER__Fa4-native-lib_Debug CMakeFiles\Fa4-native-lib.dir\native-lib.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\FindA4.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\Vector.cpp.obj
+build Fa4-native-lib.dll Fa4-native-lib.lib: CXX_SHARED_LIBRARY_LINKER__Fa4-native-lib_Debug CMakeFiles\Fa4-native-lib.dir\Source\Vector.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\FindA4.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\GetA4.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\GetCamPos.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\GetKrit.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\Init.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\UpdateOreint.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\Tabu.cpp.obj CMakeFiles\Fa4-native-lib.dir\Source\MakeBest.cpp.obj CMakeFiles\Fa4-native-lib.dir\NativeLib.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -std=c++14 -pthread -g
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -87,6 +143,124 @@ build Fa4-native-lib.dll Fa4-native-lib.lib: CXX_SHARED_LIBRARY_LINKER__Fa4-nati
   TARGET_FILE = Fa4-native-lib.dll
   TARGET_IMPLIB = Fa4-native-lib.lib
   TARGET_PDB = Fa4-native-lib.pdb
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target Fa4-native-lib-test
+
+
+#############################################
+# Order-only phony target for Fa4-native-lib-test
+
+build cmake_object_order_depends_target_Fa4-native-lib-test: phony || CMakeFiles\Fa4-native-lib-test.dir
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\Vector.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\Vector.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\FindA4.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\FindA4.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\GetA4.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\GetA4.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\GetCamPos.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\GetCamPos.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\GetKrit.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\GetKrit.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\Init.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\Init.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\UpdateOreint.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\UpdateOreint.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\Tabu.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\Tabu.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\MakeBest.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\MakeBest.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\Source\AutoTest.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\Source\AutoTest.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir\Source
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+build CMakeFiles\Fa4-native-lib-test.dir\NativeLib-test.cpp.obj: CXX_COMPILER__Fa4-native-lib-test_Debug ..\..\..\NativeLib-test.cpp || cmake_object_order_depends_target_Fa4-native-lib-test
+  DEFINES = -DFa4_native_lib_test_EXPORTS
+  FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_PDB = Fa4-native-lib-test.pdb
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target Fa4-native-lib-test
+
+
+#############################################
+# Link the shared library Fa4-native-lib-test.dll
+
+build Fa4-native-lib-test.dll Fa4-native-lib-test.lib: CXX_SHARED_LIBRARY_LINKER__Fa4-native-lib-test_Debug CMakeFiles\Fa4-native-lib-test.dir\Source\Vector.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\FindA4.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\GetA4.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\GetCamPos.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\GetKrit.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\Init.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\UpdateOreint.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\Tabu.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\MakeBest.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\Source\AutoTest.cpp.obj CMakeFiles\Fa4-native-lib-test.dir\NativeLib-test.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -std=c++14 -pthread -g
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL
+  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\Fa4-native-lib-test.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  RESTAT = 1
+  TARGET_COMPILE_PDB = CMakeFiles\Fa4-native-lib-test.dir\
+  TARGET_FILE = Fa4-native-lib-test.dll
+  TARGET_IMPLIB = Fa4-native-lib-test.lib
+  TARGET_PDB = Fa4-native-lib-test.pdb
 
 
 #############################################
@@ -116,6 +290,8 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 build Fa4-native-lib: phony Fa4-native-lib.dll
 
+build Fa4-native-lib-test: phony Fa4-native-lib-test.dll
+
 # =============================================================================
 # Folder targets.
 
@@ -124,7 +300,7 @@ build Fa4-native-lib: phony Fa4-native-lib.dll
 #############################################
 # Folder: C:/Repos/Android/MyApplication/app/src/main/cpp/out/build/x64-Debug
 
-build all: phony Fa4-native-lib.dll
+build all: phony Fa4-native-lib.dll Fa4-native-lib-test.dll
 
 # =============================================================================
 # Built-in targets

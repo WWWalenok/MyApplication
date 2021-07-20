@@ -1,7 +1,7 @@
 //
-//	Version 1.1.4_A
+//	Version 1.1.6_A
 //
-//	Date 14.07
+//	Date 19.07
 //
 
 #include "../Include/FindA4.hpp"
@@ -15,6 +15,10 @@ namespace fa4
 
 	void  Finder::InitImg(void* map, int32_t rows, int32_t cols, Typeofarray _Y)
 	{
+		is_gcams = false;
+		is_list = false;
+		for (int32_t i = 0; i < RandomCount; i++)
+			arandom[i] = (rand()) / double(RAND_MAX);
 		map32 = (uint32_t*)(map);
 		map32_2 = (uint32_t**)(map);
 		map8 = (uint8_t*)(map);
@@ -26,9 +30,7 @@ namespace fa4
 		double time = 0;
 		useangel = 0;
 		KadrNumber = 0;
-		for(int32_t i = 0; i < RandomCount; i++)
-			arandom[i] = (rand()) / double(RAND_MAX);
-		//srand(img[immaxY / 13][immaxX / 11]);
+
 		{
 			// Табуляция одной из функций
 			// Предварительно табулируем sin и cos
@@ -83,8 +85,7 @@ namespace fa4
 		double time = 0;
 		useangel = (KadrNumber > 0) ? 0 : 1;
 		KadrNumber = abs(KadrNumber);
-		for(int32_t i = 0; i < RandomCount; i++)
-			arandom[i] = (rand()) / double(RAND_MAX);
+
 		{
 			for(int32_t i = 0; i < 2001; i++)
 			{
@@ -134,8 +135,7 @@ namespace fa4
 		double time = 0;
 		useangel = (KadrNumber > 0) ? 0 : 1;
 		KadrNumber = abs(KadrNumber);
-		for(int32_t i = 0; i < RandomCount; i++)
-			arandom[i] = (rand()) / double(RAND_MAX);
+
 		{
 			for(int32_t i = 0; i < 2001; i++)
 			{

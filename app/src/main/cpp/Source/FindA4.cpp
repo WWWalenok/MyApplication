@@ -1,7 +1,7 @@
 //
-//	Version 1.1.4_A
+//	Version 1.1.6_A
 //
-//	Date 14.07
+//	Date 19.07
 //
 
 #include "../Include/FindA4.hpp"
@@ -45,8 +45,6 @@ namespace fa4
 
 		BruteScan(12000, 350, cstat, list, KritBB, SheetFound, PF, SPF);
 
-		for (int32_t i = 0; i < RandomCount; i++)
-			arandom[i] = (rand()) / double(RAND_MAX);
 		float B_Krits[4];
 		float lstat[8];
 
@@ -136,8 +134,6 @@ namespace fa4
 		if (NotCenteredSheet == 1) PF = 0;
 
 #pragma region Do poisk
-		for (int32_t i = 0; i < RandomCount; i++)
-			arandom[i] = (rand()) / double(RAND_MAX);
 
 		double out[30][10];
 
@@ -551,8 +547,6 @@ namespace fa4
 
 		BruteScan(12000, 350, cstat, list, KritBB, SheetFound, PF, SPF);
 
-		for (int32_t i = 0; i < RandomCount; i++)
-			arandom[i] = (rand()) / double(RAND_MAX);
 		float B_Krits[4];
 		float lstat[8];
 
@@ -629,6 +623,13 @@ namespace fa4
 		if (oisbadlist != 0)
 			*oisbadlist = IsBadList;
 
+		if (IsBadList == 0)
+		{
+			for (int i = 0; i < 8; i++)
+				Finder::list[i] = list[i];
+			is_list = true;
+		}
+
 		if (inout != 0)
 		{
 			inout[8][0] = xAb; inout[8][1] = yAb;
@@ -665,23 +666,39 @@ namespace fa4
 
 		if (reinit || list == 0)
 		{
-			int32_t orienta, SheetFound, SF, SPF, PF;
-			double KritBB;
-			float list[8];
-			IsBadList = 1;
-			for (int Q = 0; Q < 10 && IsBadList == 1; Q++)
+			if (!reinit && is_list == true)
 			{
-				GetCorner(list, &IsBadList);
-			}
-			xAb = list[0];
-			xBb = list[2];
-			xCb = list[4];
-			xDb = list[6];
+				xAb = Finder::list[0];
+				xBb = Finder::list[2];
+				xCb = Finder::list[4];
+				xDb = Finder::list[6];
 
-			yAb = list[1];
-			yBb = list[3];
-			yCb = list[5];
-			yDb = list[7];
+				yAb = Finder::list[1];
+				yBb = Finder::list[3];
+				yCb = Finder::list[5];
+				yDb = Finder::list[7];
+			}
+			else
+			{
+				int32_t orienta, SheetFound, SF, SPF, PF;
+				double KritBB;
+				float list[8];
+				IsBadList = 1;
+				for (int Q = 0; Q < 10 && IsBadList == 1; Q++)
+				{
+					GetCorner(list, &IsBadList);
+				}
+
+				xAb = list[0];
+				xBb = list[2];
+				xCb = list[4];
+				xDb = list[6];
+
+				yAb = list[1];
+				yBb = list[3];
+				yCb = list[5];
+				yDb = list[7];
+			}
 		}
 		else
 		{
@@ -722,6 +739,7 @@ namespace fa4
 		float CBeta = acos(abs(cam[3][2])) / PI * 180;
 
 
+
 		std::string Ret = "";
 		Ret = Ret + "{"
 			+ "\"Alfa\":" + std::to_string(AAlfa)
@@ -750,6 +768,16 @@ namespace fa4
 				for (int j = 0; j < 3; j++)
 					ocamspace[i][j] = cam[i][j];
 		}
+
+		{
+			for (int j = 0; j < 4; j++)
+				gcams[0][j] = cam[0][j];
+			for (int i = 1; i < 8; i++)
+				for (int j = 0; j < 3; j++)
+					gcams[i][j] = cam[i][j];
+			is_gcams = true;
+		}
+
 
 		if (inout != 0)
 		{
@@ -785,23 +813,38 @@ namespace fa4
 
 		if (reinit || list == 0)
 		{
-			int32_t orienta, SheetFound, SF, SPF, PF;
-			double KritBB;
-			float list[8];
-			IsBadList = 1;
-			for (int Q = 0; Q < 10 && IsBadList == 1; Q++)
+			if (!reinit && is_list == true)
 			{
-				GetCorner(list, &IsBadList);
-			}
-			xAb = list[0];
-			xBb = list[2];
-			xCb = list[4];
-			xDb = list[6];
+				xAb = Finder::list[0];
+				xBb = Finder::list[2];
+				xCb = Finder::list[4];
+				xDb = Finder::list[6];
 
-			yAb = list[1];
-			yBb = list[3];
-			yCb = list[5];
-			yDb = list[7];
+				yAb = Finder::list[1];
+				yBb = Finder::list[3];
+				yCb = Finder::list[5];
+				yDb = Finder::list[7];
+			}
+			else
+			{
+				int32_t orienta, SheetFound, SF, SPF, PF;
+				double KritBB;
+				float list[8];
+				IsBadList = 1;
+				for (int Q = 0; Q < 10 && IsBadList == 1; Q++)
+				{
+					GetCorner(list, &IsBadList);
+				}
+				xAb = list[0];
+				xBb = list[2];
+				xCb = list[4];
+				xDb = list[6];
+
+				yAb = list[1];
+				yBb = list[3];
+				yCb = list[5];
+				yDb = list[7];
+			}
 		}
 		else
 		{
@@ -889,24 +932,52 @@ namespace fa4
 
 		if (reinit || cam == 0)
 		{
-			reinit = true;
-			cam = 0;
-			cam = new float* [8];
-			for (int i = 0; i < 8; i++)
-				cam[i] = new float[4];
-
-			IsBadList = 0;
-
-			for (int Q = 0; Q < 10 && IsBadList == 1; Q++)
+			if (!reinit && is_gcams == true && is_list == true)
 			{
-				GetCorner(list, &IsBadList);
+				xAb = Finder::list[0];
+				xBb = Finder::list[2];
+				xCb = Finder::list[4];
+				xDb = Finder::list[6];
+
+				yAb = Finder::list[1];
+				yBb = Finder::list[3];
+				yCb = Finder::list[5];
+				yDb = Finder::list[7];
+
+				for (int j = 0; j < 4; j++)
+					cam[0][j] = gcams[0][j];
+				for (int i = 1; i < 8; i++)
+					for (int j = 0; j < 3; j++)
+						cam[i][j] = gcams[i][j];
+
 			}
+			else
+			{
+				reinit = true;
+				cam = 0;
+				cam = new float* [8];
+				for (int i = 0; i < 8; i++)
+					cam[i] = new float[4];
 
-			if (IsBadList)
-				return "{\"Error\" : \"A4_Not_Find\"}";
 
-			GetCams(list, cam);
+				if (!is_list)
+					return "{\"Error\" : \"A4_Not_Find\"}";
 
+				GetCams(list, cam);
+
+				xAb = list[0];
+				xBb = list[2];
+				xCb = list[4];
+				xDb = list[6];
+
+				yAb = list[1];
+				yBb = list[3];
+				yCb = list[5];
+				yDb = list[7];
+			}
+		}
+		else
+		{
 			xAb = list[0];
 			xBb = list[2];
 			xCb = list[4];
@@ -917,17 +988,6 @@ namespace fa4
 			yCb = list[5];
 			yDb = list[7];
 		}
-
-		xAb = list[0];
-		xBb = list[2];
-		xCb = list[4];
-		xDb = list[6];
-
-		yAb = list[1];
-		yBb = list[3];
-		yCb = list[5];
-		yDb = list[7];
-
 		// Определяем пространственные углы
 		double AAlfa = atan(cam[0][1] / cam[0][0] + 1e-20) / PI * 180;
 		if ((cam[0][0] + 1e-20) < 0) AAlfa = AAlfa + 180;
@@ -1033,16 +1093,74 @@ namespace fa4
 			SayRotateDown = 0,
 			SayRotateUp = 0;
 
-		double xAb = list[0];
-		double xBb = list[2];
-		double xCb = list[4];
-		double xDb = list[6];
+		double xAb = 0;
+		double xBb = 0;
+		double xCb = 0;
+		double xDb = 0;
 
-		double yAb = list[1];
-		double yBb = list[3];
-		double yCb = list[5];
-		double yDb = list[7];
+		double yAb = 0;
+		double yBb = 0;
+		double yCb = 0;
+		double yDb = 0;
 
+		if (reinit || cam == 0 || list == 0)
+		{
+			if (!reinit && is_gcams == true && is_list == true)
+			{
+				xAb = Finder::list[0];
+				xBb = Finder::list[2];
+				xCb = Finder::list[4];
+				xDb = Finder::list[6];
+
+				yAb = Finder::list[1];
+				yBb = Finder::list[3];
+				yCb = Finder::list[5];
+				yDb = Finder::list[7];
+
+				for (int j = 0; j < 4; j++)
+					cam[0][j] = gcams[0][j];
+				for (int i = 1; i < 8; i++)
+					for (int j = 0; j < 3; j++)
+						cam[i][j] = gcams[i][j];
+
+			}
+			else
+			{
+				reinit = true;
+				cam = 0;
+				cam = new float* [8];
+				for (int i = 0; i < 8; i++)
+					cam[i] = new float[4];
+
+
+				if (!is_list)
+					return "{\"Error\" : \"A4_Not_Find\"}";
+
+				GetCams(list, cam);
+
+				xAb = list[0];
+				xBb = list[2];
+				xCb = list[4];
+				xDb = list[6];
+
+				yAb = list[1];
+				yBb = list[3];
+				yCb = list[5];
+				yDb = list[7];
+			}
+		}
+		else
+		{
+			xAb = list[0];
+			xBb = list[2];
+			xCb = list[4];
+			xDb = list[6];
+
+			yAb = list[1];
+			yBb = list[3];
+			yCb = list[5];
+			yDb = list[7];
+		}
 
 		double AAlfa = atan(cam[0][1] / cam[0][0] + 1e-20) / PI * 180;
 		if ((cam[0][0] + 1e-20) < 0) AAlfa = AAlfa + 180;
@@ -1188,11 +1306,49 @@ namespace fa4
 			+ ",\"SayRotateCounterClockwise\":" + std::to_string(0)
 			+ '}';
 
+		if (reinit)
+		{
+			for (int32_t i = 0; i < 8; i++)
+				delete[] cam[i];
+			delete[] cam;
+		}
+
+
 		return Ret;
 	}
 
-	std::string Finder::FootCollor(float* list, uint8_t* out_I)
+	std::string Finder::FootCollor(float* _list, uint8_t* out_I)
 	{
+		int32_t IsBadList = 0;
+
+		float list[8];
+
+		if (list == 0)
+		{
+			if (is_list == true)
+			{
+				for (int u = 0; u < 8; u++)
+					list[u] = Finder::list[u];
+			}
+			else
+			{
+				int32_t orienta, SheetFound, SF, SPF, PF;
+				double KritBB;
+				IsBadList = 1;
+				for (int Q = 0; Q < 10 && IsBadList == 1; Q++)
+				{
+					GetCorner(list, &IsBadList);
+				}
+				if (IsBadList)
+					return "ERROR";
+			}
+		}
+		else
+		{
+			for (int u = 0; u < 8; u++)
+				list[u] = _list[u];
+		}
+
 		uint8_t I;
 
 		const uint16_t diskret = 30;
@@ -1244,7 +1400,7 @@ namespace fa4
 					avg_bot += map[x][y];
 					h_bot++;
 				}
-				
+
 			}
 		}
 
@@ -1252,10 +1408,10 @@ namespace fa4
 		avg_bot /= h_bot;
 
 		std::string Ret;
-		if(out_I != 0)
+		if (out_I != 0)
 			*out_I = avg_bot;
 
-		Ret = Ret 
+		Ret = Ret
 			+ "{"
 			+ "\"IsGray\":" + std::to_string(avg_bot > 50)
 			+ ",\"avg\":" + std::to_string(avg)

@@ -1,7 +1,7 @@
 //
-//	Version 1.1.4_A
+//	Version 1.1.6_A
 //
-//	Date 14.07
+//	Date 19.07
 //
 
 #include "../Include/FindA4.hpp"

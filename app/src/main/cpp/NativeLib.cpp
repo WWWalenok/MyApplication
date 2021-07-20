@@ -2,15 +2,14 @@
 #include <string>
 #include "Include/FindA4.hpp"
 
-extern "C"
-{
 
 #define JNI_EXTERN(func) Java_ru_fittin_scanleg_utils_jni_A4Find_ ## func
 
 #ifndef UNUSED
 #define UNUSED(x) (void)x
 #endif
-
+extern "C"
+{
 	unsigned char** convert_image(JNIEnv* jenv, jbyteArray jimg, int maxX, int maxY) {
 		auto bytes = jenv->GetByteArrayElements(jimg, nullptr);
 		auto** img = new unsigned char* [maxY];
@@ -58,22 +57,11 @@ extern "C"
 	 JNIEXPORT jint JNICALL
 		JNI_EXTERN(InitImage)(JNIEnv * env, jobject /* this */, jlong id, jbyteArray _arr, jint maxX, jint maxY, jint Kadr)
 	{
-		 unsigned int maxthread = hardware_concurrency();
-		 auto** img = convert_image(jenv, _arr, maxX, maxY);
+		 auto** img = convert_image(env, _arr, maxX, maxY);
 
-		for (int32_t i = 0, k = 0; i < maxX; i++)
-		{
-			img[i] = new unsigned char[maxY];
-			for (int32_t j = 0; j < maxY; j++)
-				img[i][j] = arr[j + i * maxY];
-		}
-
-		fa4::Prop p[2]{ fa4::Prop("Kadr", Kadr) };
-		fa4::Init(id, p, 1);
-
-		fa4::Prop p[2]{ fa4::Prop("ThreadCount", hardware_concurrency()) };
-		fa4::Init(id, p, 1);
-
+		fa4::Prop p[2]{ fa4::Prop("Kadr", Kadr), fa4::Prop("ThreadCount", hardware_concurrency()) };
+		fa4::Init(id, p, 2);
+        //void InitImg(size_t id, void* map, int32_t rows, int32_t cols, Finder::Typeofarray = Finder::UI8_2);
 		fa4::InitImg(id, (uint8_t**)(img), int32_t(maxX), int32_t(maxY));
 		return 0;
 	}

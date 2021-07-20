@@ -1,0 +1,68 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Fa4Lib",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Fa4-native-lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Fa4-native-lib-Debug-1156ca6dc415f7f04568.json",
+					"name" : "Fa4-native-lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Fa4-native-lib-test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Fa4-native-lib-test-Debug-79424f6730ac6b14871b.json",
+					"name" : "Fa4-native-lib-test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Repos/Android/MyApplication/app/src/main/cpp/out/build/x64-Debug",
+		"source" : "C:/Repos/Android/MyApplication/app/src/main/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

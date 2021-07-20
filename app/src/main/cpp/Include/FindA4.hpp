@@ -1,7 +1,7 @@
 //
-//	Version 1.1.4_A
+//	Version 1.1.6_A
 //
-//	Date 14.07
+//	Date 19.07
 //
 #pragma once
 #if defined __cplusplus
@@ -172,7 +172,8 @@ extern "C++"
 			float tacos[2001];
 			float tr[2000];
 			float ironangel;
-			float gcams[8][4]{ -1000000 }, list[8]{ -1000000 }, cstat[7]{ -1000000 };
+			bool is_gcams = false, is_list = false;
+			float gcams[8][4], list[8];
 			float immaxX, immaxY, GGama, GBeta, GFocal;
 
 			const float baseK = 43.26661530556787151743 / 800.0;

@@ -40,6 +40,10 @@ add_library( # Sets the name of the library.
 
              # Provides a relative path to your source file(s).
 
+        Include/FindA4.hpp
+        Include/Vector.hpp
+        Include/Tabu.hpp
+
         Source/Vector.cpp
         Source/FindA4.cpp
         Source/GetA4.cpp
@@ -49,18 +53,37 @@ add_library( # Sets the name of the library.
         Source/UpdateOreint.cpp
         Source/Tabu.cpp
         Source/MakeBest.cpp
-        Nativelib_CPP.cpp
-        Nativelib_PAS.cpp
+
+        Nativelib.cpp
+
+
+        )
+
+add_library( # Sets the name of the library.
+        Fa4-native-lib-test
+
+        # Sets the library as a shared library.
+        SHARED
+
+        # Provides a relative path to your source file(s).
+
         Include/FindA4.hpp
         Include/Vector.hpp
         Include/Tabu.hpp
+        Include/Autotest.hpp
 
-        native-lib.cpp
-        Include/Vector.h
-        Include/FindA4.h
-        Include/Tabu.h
-        Source/FindA4O.cpp
-        Source/VectorO.cpp
+        Source/Vector.cpp
+        Source/FindA4.cpp
+        Source/GetA4.cpp
+        Source/GetCamPos.cpp
+        Source/GetKrit.cpp
+        Source/Init.cpp
+        Source/UpdateOreint.cpp
+        Source/Tabu.cpp
+        Source/MakeBest.cpp
+        Source/AutoTest.cpp
+
+        Nativelib-test.cpp
 
         )
 
